@@ -1,0 +1,13 @@
+**************** SplashScreen *******************
+Splash screen is containing AnimatedBuilder, which requires animation and builder,
+    - to builder we pass a method
+    (BuildContext context, Widget? child){
+        retrun Transfrom.rotate(
+            angle: angle,
+            child:    // we pass the widget that we want to rotate.
+        );
+    }
+
+    - AnimatedBuilder requires animation, for this we have to create controller for it. (also we added TickerProviderStateMixin with State<SplashScreen> class)
+
+****
