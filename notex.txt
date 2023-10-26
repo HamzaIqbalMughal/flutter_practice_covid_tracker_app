@@ -10,4 +10,5 @@ Splash screen is containing AnimatedBuilder, which requires animation and builde
 
     - AnimatedBuilder requires animation, for this we have to create controller for it. (also we added TickerProviderStateMixin with State<SplashScreen> class)
 
-****
+*************** WorldStatScreen ******************
+
