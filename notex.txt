@@ -1,3 +1,4 @@
+1.
 **************** SplashScreen *******************
 Splash screen is containing AnimatedBuilder, which requires animation and builder,
     - to builder we pass a method
@@ -10,5 +11,17 @@ Splash screen is containing AnimatedBuilder, which requires animation and builde
 
     - AnimatedBuilder requires animation, for this we have to create controller for it. (also we added TickerProviderStateMixin with State<SplashScreen> class)
 
+2.
 *************** WorldStatScreen ******************
 
+added PaiChart widget,
+
+
+3. Added Services/Utilities in lib directory. in Utilities added app_url.dart file
+    In app_url.dart we will define all the APIs that will be used inside our App.
+
+4. created model world_states_model
+
+5. Added SpinKitFadingCircle() for loading screen while fetching API
+
+*************** CountriesListScreen *******************

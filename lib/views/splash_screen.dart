@@ -8,6 +8,8 @@ import 'package:flutter_practice_covid_tracker_app/views/world_states.dart';
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 
+  static const screen_id = 'SplashScreen';
+
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -26,7 +28,8 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     Timer(const Duration(seconds: 4), () {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> WorldStatesScreen()));
+      Navigator.pushReplacementNamed(context, WorldStatesScreen.screen_id);
+      // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> WorldStatesScreen()));
     });
   }
 
