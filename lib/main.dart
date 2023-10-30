@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_practice_covid_tracker_app/views/countries_list_screen.dart';
 import 'package:flutter_practice_covid_tracker_app/views/splash_screen.dart';
-import 'package:flutter_practice_covid_tracker_app/views/world_states.dart';
+import 'package:flutter_practice_covid_tracker_app/views/world_states_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
       ),
       // home: SplashScreen(),
       initialRoute: SplashScreen.screen_id,

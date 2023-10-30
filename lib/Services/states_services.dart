@@ -18,4 +18,18 @@ class StatesServices{
       throw Exception('Error in fetch WorldStatesRecords');
     }
   }
+
+  Future<List<dynamic>> fecthCountriesList () async {
+
+    var data;
+    final response = await http.get(Uri.parse(AppUrl.countriesList));
+    if(response.statusCode == 200){
+      data = jsonDecode(response.body.toString());
+      return data;
+    }
+    else{
+      throw Exception('Error in fetch WorldStatesRecords');
+    }
+  }
+
 }

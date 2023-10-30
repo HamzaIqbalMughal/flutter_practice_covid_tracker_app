@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
-import 'package:flutter_practice_covid_tracker_app/views/world_states.dart';
+import 'package:flutter_practice_covid_tracker_app/views/world_states_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

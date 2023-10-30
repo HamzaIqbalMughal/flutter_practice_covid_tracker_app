@@ -7,5 +7,4 @@ class AppUrl {
   static const String worldStatesApi = baseUrl + 'all';
   static const String countriesList = baseUrl + 'countries';
 
-
 }

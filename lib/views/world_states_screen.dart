@@ -42,7 +42,8 @@ class _WorldStatesScreenState extends State<WorldStatesScreen>
     StatesServices statesServices = StatesServices();
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      // backgroundColor: Colors.transparent,
+      // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
             child: Padding(
           padding: const EdgeInsets.all(15),

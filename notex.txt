@@ -25,3 +25,12 @@ added PaiChart widget,
 5. Added SpinKitFadingCircle() for loading screen while fetching API
 
 *************** CountriesListScreen *******************
+Fetch the data without creating model ,
+
+added fetchCountriesList() function, in states_services,
+
+used Shimmer affect
+
+also added functionality of searching the Country from List
+
+*************** CountriesListScreen *******************
