@@ -33,4 +33,5 @@ used Shimmer affect
 
 also added functionality of searching the Country from List
 
-*************** CountriesListScreen *******************
+*************** CountryDetailScreen *******************
+from CountriesListScreen i have passed the CountryModel to CountryDetailScreen using Constructor

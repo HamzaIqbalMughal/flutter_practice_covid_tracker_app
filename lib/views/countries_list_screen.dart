@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_practice_covid_tracker_app/Models/country_model.dart';
 import 'package:flutter_practice_covid_tracker_app/Services/states_services.dart';
+import 'package:flutter_practice_covid_tracker_app/views/country_detail_screen.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CountriesListScreen extends StatefulWidget {
@@ -48,53 +50,62 @@ class _CountriesListScreenState extends State<CountriesListScreen> {
                 future: statesServices.fecthCountriesList(),
                 builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
                   if (snapshot.hasData) {
+
                     return ListView.builder(
                       itemCount: snapshot.data!.length,
                       itemBuilder: (context, index) {
 
-                        String countryName = snapshot.data![index]['country'] ;
+                        String countryName = snapshot.data![index]['country'];
 
                         if(searchController.text.isEmpty){
-                          return ListTile(
-                            leading: Image(
-                              height: 50,
-                              width: 50,
-                              image: NetworkImage(
-                                  snapshot.data![index]['countryInfo']['flag']),
+                          return InkWell(
+                            onTap: (){
+                              // Navigator.pushNamed(context, CountryDetailScreen.screen_id);
+                              Navigator.push(context,
+                                  MaterialPageRoute(
+                                      builder: (context) => CountryDetailScreen(countryModel: CountryModel.fromJson(snapshot.data![index]))
+                                  )
+                              );
+                            },
+                            child: ListTile(
+                              leading: Image(
+                                height: 50,
+                                width: 50,
+                                image: NetworkImage(
+                                    snapshot.data![index]['countryInfo']['flag']),
+                              ),
+                              title: Text(snapshot.data![index]['country']),
+                              subtitle:
+                              Text(snapshot.data![index]['cases'].toString()),
                             ),
-                            title: Text(snapshot.data![index]['country']),
-                            subtitle:
-                            Text(snapshot.data![index]['cases'].toString()),
                           );
                         }
                         else if(countryName.toLowerCase().contains(searchController.text.toString())){
-                          return ListTile(
-                            leading: Image(
-                              height: 50,
-                              width: 50,
-                              image: NetworkImage(
-                                  snapshot.data![index]['countryInfo']['flag']),
+                          return InkWell(
+                            onTap: (){
+                              // Navigator.pushNamed(context, CountryDetailScreen.screen_id);
+                              Navigator.push(context,
+                                  MaterialPageRoute(
+                                      builder: (context) => CountryDetailScreen(countryModel: CountryModel.fromJson(snapshot.data![index]))
+                                  )
+                              );
+                            },
+                            child: ListTile(
+                              leading: Image(
+                                height: 50,
+                                width: 50,
+                                image: NetworkImage(
+                                    snapshot.data![index]['countryInfo']['flag']),
+                              ),
+                              title: Text(snapshot.data![index]['country']),
+                              subtitle:
+                              Text(snapshot.data![index]['cases'].toString()),
                             ),
-                            title: Text(snapshot.data![index]['country']),
-                            subtitle:
-                            Text(snapshot.data![index]['cases'].toString()),
                           );
                         }
                         else{
                           return Container();
                         }
-
-                        return ListTile(
-                          leading: Image(
-                            height: 50,
-                            width: 50,
-                            image: NetworkImage(
-                                snapshot.data![index]['countryInfo']['flag']),
-                          ),
-                          title: Text(snapshot.data![index]['country']),
-                          subtitle:
-                              Text(snapshot.data![index]['cases'].toString()),
-                        );
                       },
                     );
                   } else {
